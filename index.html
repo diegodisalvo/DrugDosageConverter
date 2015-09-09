@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Oppiodi</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <!-- handlebars -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <!-- Parse app files -->
+        <script src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+
+
+        <link rel="stylesheet" href="main.css">
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+
+    </head>
+    <body>
+      <h1>Conversione dosaggio Oppioidi</h1>
+      <h5>Scritto con e per AnnaB</h5>
+      <hr>
+
+      <div class="main-container">
+      </div>
+
+      <!-- handlebars templates -->
+      <script id="tabella-opp-tpl" type="text/x-handlebars-template">
+        <h2>Tabella oppioidi</h2>
+        <table class="table-striped">
+          <tr>
+            <th>Farmaco</th>
+            <th>Unit</th>
+            <th class="dose" id="0">1</th>
+            <th class="dose" id="1">2</th>
+            <th class="dose" id="2">3</th>
+            <th class="dose" id="3">4</th>
+            <th class="dose" id="4">5</th>
+            <th class="dose" id="5">6</th>
+            <th class="dose" id="6">7</th>
+            <th class="dose" id="7">8</th>
+            <th class="dose" id="8">9</th>
+            <th class="dose" id="9">10</th>
+            <th class="dose" id="10">11</th>
+            <th class="dose" id="11">12</th>
+            <th class="dose" id="12">13</th>
+            <th class="dose" id="13">14</th>
+            <th class="dose" id="14">15</th>
+            <th class="dose" id="15">16</th>
+          </tr>
+          {{#each oppioide}}
+          <tr>
+            <td><a class="farmaco" href="#{{farmaco}}">{{farmaco}}</a></td>
+            <td>{{unit}}</td>
+            {{#each dosaggio}}
+              <td class="dose" id="{{@index}}">{{this}}</td>
+            {{/each}}
+          </tr>
+        {{/each}}
+        </table>
+
+        {{#each oppioide}}
+        <div class="dosi" id="{{farmaco}}">
+          <h2>{{farmaco}}</h2>
+          <h5>TODO: nome commerciale</h5>
+            <div class="info">
+              <h3>Interazioni</h3>
+              <a><p>{{interazioni}}</p></a>
+            </div>
+            <div class="info">
+              <h3>Effetti Collaterali</h3>
+              <p>{{effetti_coll}}</p>
+            </div>
+          <br>
+          {{#each dosaggio}}
+            <button class="btn" id="{{@index}}">{{this}}</button>
+            {{/each}}
+        <div class="close-btn">X</div>
+        </div>
+        {{/each}}
+      </script>
+
+      <script id="welcome-tpl" type="text/x-handlebars-template">
+        <h2>Handlebars working fine</h2>
+        <p>And we're all happy about it :)</p>
+      </script>
+
+      <script src="app.js"></script>
+
+    </body>
+    </html>

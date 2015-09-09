@@ -1,0 +1,120 @@
+html{
+    font-size: 16px;
+    padding: 0;
+}
+
+h1{
+  text-align: center;
+  font-size: 1.3em;
+}
+
+h2{
+  margin-left: 0.4em;
+}
+
+h5{
+  padding: 0 2em;
+  text-align: right;
+}
+
+table{
+  margin: 1em;
+}
+
+/*tables*/
+table th, table td{
+  padding: 1em;
+}
+
+th{
+  background: grey;
+}
+
+.dosaggi{
+  width: 100%;
+  background: red;
+}
+
+.btn{
+  background: white;
+  color: black;
+  width: 50px;
+  height: 30px;
+  padding: 1em;
+  margin: 0.1em;
+}
+
+.active{
+  color: red;
+  text-decoration: underline;
+  background-color: yellow;
+}
+
+.dosi{
+  position: absolute;
+  top: 0;
+  background: rgb(97, 191, 92);
+  padding: 0.3em 1em 4em 1em;
+}
+
+.dosi button{
+  width: 60px;
+  height: 40px;
+  margin: 0.3em;
+}
+
+.info p{
+  display: none;
+}
+
+.close-btn{
+  margin-left: auto;
+  text-align: center;
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+/*
+SIGN IN
+*/
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin .checkbox {
+    font-weight: normal;
+}
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}

@@ -77,9 +77,17 @@ th{
 }
 
 
+.logout{
+  padding: 1em;
+  float: right;
+}
 
-
-
+.welcome{
+  padding: 2em 0 0 0;
+  text-align: center;
+  width: 60%;
+  margin: 0 auto 0 auto;
+}
 
 /*
 SIGN IN

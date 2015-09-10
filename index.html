@@ -28,7 +28,7 @@
     <body>
       <h1>Conversione dosaggio Oppioidi</h1>
       <h5>Scritto con e per AnnaB</h5>
-      <a class="logout" href="logout">Logout</a>
+      <a class="logout" href="#">Logout</a>
       <hr>
 
       <div class="main-container">
@@ -91,9 +91,11 @@
       </script>
 
       <script id="welcome-tpl" type="text/x-handlebars-template">
-        <h2>Benvenuto sul convertitore dei dosaggi! :D</h2>
-        <p>Sono sinceramente felice che tu possa trovare interessante questa applicazione, MA</p>
-        <a href="login">per usarla devi essere un utente autorizzato</a>
+        <div class="welcome">
+          <h2>Benvenuto sul convertitore dei dosaggi! :D</h2>
+          <p>Sono sinceramente felice che tu possa trovare interessante questa applicazione, MA</p>
+          <a href="#login">per usarla devi essere un utente autorizzato</a>
+        </div>
       </script>
 
       <script id="login-tpl" type="text/x-handlebars-template">
@@ -104,6 +106,8 @@
           <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
       </script>
+
+
 
       <script src="app.js"></script>
 

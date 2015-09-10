@@ -47,6 +47,7 @@ $(function() {
             // If the username and password matches
             success: function(user) {
                 drugRouter.navigate('index', { trigger: true });
+                window.location.reload();
             },
             // If there is an error
             error: function(user, error) {
@@ -67,7 +68,7 @@ $(function() {
 
     // this runs when we start the Router
     start: function(){
-      Parse.history.start({pushState: true});
+      Parse.history.start();
       drugRouter.navigate('', {trigger: true});
     },
 
@@ -75,7 +76,7 @@ $(function() {
     routes:{
       '' : 'index',
       'login' : 'login',
-      'logout' : 'logout'
+      'logout' : 'logout',
     },
 
     login: function(){
@@ -99,6 +100,9 @@ $(function() {
           success: function(oppioidi){
             console.log(oppioidi);
 
+            var oppioidiTableView = new OppioidiTableView({ collection: oppioidi });
+            oppioidiTableView.render();
+            $('.main-container').html(oppioidiTableView.el);
             //function to toggle the dosages of a specific drug
             var targetDiv;
             var targetDrug;
@@ -142,10 +146,6 @@ $(function() {
           }
         });
 
-        var oppioidiTableView = new OppioidiTableView({ collection: oppioidi });
-        oppioidiTableView.render();
-        $('.main-container').html(oppioidiTableView.el);
-
 
       } else {
         console.log('no user logged in');
@@ -154,9 +154,12 @@ $(function() {
         welcomeView.render();
         $('.main-container').html(welcomeView.el);
       };
-    }
+    },
 
-    });
+  });
+
+    var drugRouter = new DrugRouter();
+    drugRouter.start();
 
 
 
@@ -164,11 +167,16 @@ $(function() {
       e.preventDefault();
       console.log('user logging out');
       Parse.User.logOut();
-      drugRouter.navigate('login', {trigger: true});
+      drugRouter.navigate('', {trigger: true});
+      window.location.reload();
+    });
+
+    $(document).on('click', '.admin', function(e){
+      e.preventDefault();
+      $('.main-container').html('Io li leggo i messaggi di Anna');
     });
 
 
-    var drugRouter = new DrugRouter();
-    drugRouter.start();
+
 
 });
